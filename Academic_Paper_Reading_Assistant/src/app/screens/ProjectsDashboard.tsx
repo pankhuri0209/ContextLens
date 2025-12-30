@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Plus, Grid3x3, List, Search, TrendingUp, Clock, Database } from 'lucide-react';
+import { Plus, Grid3x3, List, Search, TrendingUp, Clock, Database, GraduationCap } from 'lucide-react';
 import { motion } from 'motion/react';
 import { mockProjects } from '../../data/projectData';
 import { ProjectCard } from '../components/ProjectCard';
 import { CreateProjectModal } from '../components/CreateProjectModal';
+import { UserMenu } from '../components/UserMenu';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Progress } from '../components/ui/progress';
@@ -14,6 +15,17 @@ export function ProjectsDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
+      {/* Header with User Menu */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <GraduationCap className="w-7 h-7 text-[#2563EB]" />
+            <span className="font-semibold text-xl">PhD Reader</span>
+          </div>
+          <UserMenu />
+        </div>
+      </header>
+
       <div className="max-w-7xl mx-auto p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
